@@ -116,8 +116,7 @@ class ClientHandler(threading.Thread):
             elif data.startswith("UPLOAD"):
                 parts = data.split()
                 username = parts[1]
-                file_path = parts[1:][0]
-
+                file_path = " ".join(parts[2:])
                 try:
                     with open(file_path, "rb") as file:
                         file_data = file.read()
